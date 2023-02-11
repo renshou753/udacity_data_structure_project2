@@ -9,6 +9,9 @@ def rearrange_digits(input_list):
     Returns:
        (int),(int): Two maximum sums
     """
+
+    if not input_list:
+        return []
     
     # first use merge sort to sort the array, merge sort has time complexity of O(n logn)
     merge_sort(input_list, 0, len(input_list)-1)
@@ -45,4 +48,7 @@ test_function([[5, 6, 9, 8, 7], [975, 86]])
 
 test_function([[1, 0, 1], [10, 1]])
 
+test_function([[], []])
+
+test_function([[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9], [99999999, 99999999]])
 

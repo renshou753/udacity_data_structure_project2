@@ -62,6 +62,9 @@ class Router:
         # return the "not found" handler if you added one
         # bonus points if a path works with and without a trailing slash
         # e.g. /about and /about/ both return the /about handler
+        if not path:
+            return None
+
         paths = self.split_path(path)
         node = self.trie.find(paths)
         return node
@@ -82,3 +85,6 @@ print(router.lookup("/home")) # should print 'not found handler' or None if you 
 print(router.lookup("/home/about")) # should print 'about handler'
 print(router.lookup("/home/about/")) # should print 'about handler' or None if you did not handle trailing slashes
 print(router.lookup("/home/about/me")) # should print 'not found handler' or None if you did not implement one
+
+print(router.lookup("home")) # should print None
+print(router.lookup("")) # should print None

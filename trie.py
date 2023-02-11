@@ -50,7 +50,7 @@ class Trie:
                 else:
                     current_node = current_node.children[char]
 
-
+# test1
 word_list = ['apple', 'bear', 'goo', 'good', 'goodbye', 'goods', 'goodwill', 'gooses'  ,'zebra']
 word_trie = Trie()
 
@@ -60,7 +60,35 @@ for word in word_list:
 
 prefixNode = word_trie.find("goo")
 if prefixNode:
-    print()
+    print(prefixNode.suffixes())
+else:
+    print(" not found")
+
+# test2
+word_list = []
+word_trie = Trie()
+
+# Add words
+for word in word_list:
+    word_trie.insert(word)
+
+prefixNode = word_trie.find("goo")
+if prefixNode:
+    print(prefixNode.suffixes())
+else:
+    print(" not found")
+
+# test3
+word_list = ['apple']
+word_trie = Trie()
+
+# Add words
+for word in word_list:
+    word_trie.insert(word)
+
+prefixNode = word_trie.find("apple1")
+if prefixNode:
+    print(prefixNode.suffixes())
 else:
     print(" not found")
 

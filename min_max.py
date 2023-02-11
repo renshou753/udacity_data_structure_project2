@@ -40,3 +40,8 @@ random.shuffle(l)
 print ("Pass" if (None == get_min_max(l)) else "Fail")
 
 print ("Pass" if ((0, 0) == get_min_max([0])) else "Fail")
+
+
+l = [i for i in range(0, 10000001)]  
+random.shuffle(l)
+print ("Pass" if ((0, 10000000) == get_min_max(l)) else "Fail")
